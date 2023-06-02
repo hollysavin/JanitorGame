@@ -8,38 +8,20 @@ public class ConveyerBelt : MonoBehaviour
     private float _speed, _conveyerSpeed;
     [SerializeField]
     private Vector3 _direction;
-    [SerializeField]
-    private List<GameObject> _onBelt;
 
-    private Material _material;
+    private Rigidbody _body;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _body = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
-        for(int i = 0;  i < _onBelt.Count; i++)
-        {
-            _onBelt[i].GetComponent<Rigidbody>().AddForce(_speed * _direction);
-        }
+        Vector3 pos = _body.position;
+        _body.position += _direction * _speed * Time.deltaTime;
+        _body.MovePosition(pos);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        _onBelt.Add(collision.gameObject);
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        _onBelt.Remove(collision.gameObject);
-    }
 }
