@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SweepItem : MonoBehaviour
 {
+
+    [SerializeField] float sweepForce;
+
     private Color HighlightColor = Color.red;
     private Color initialColor;
 
@@ -32,12 +35,12 @@ public class SweepItem : MonoBehaviour
             
             if (Input.GetMouseButtonDown(0))
             {
-                hitObject.GetComponent<Rigidbody>().AddForce(-200, 0, 0);
+                hitObject.GetComponent<Rigidbody>().AddForce(-sweepForce, 0, 0);
             }
 
             if (Input.GetMouseButtonDown(1))
             {
-                hitObject.GetComponent<Rigidbody>().AddForce(200, 0, 0);
+                hitObject.GetComponent<Rigidbody>().AddForce(sweepForce, 0, 0);
             }
         }
         else if (hitObject != null)

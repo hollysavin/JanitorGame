@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: 45eada3e0b5491d45b35273aa1cb1db3
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
+      rotation in copied configuration does not match rotation in animation file:\n\t'JanitorRig_Spine1'
+      : rotation error = 3.169067 deg\n\t'JanitorRig_Neck2' : rotation error = 1.444715
+      deg\n"
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'JanitorRig_Spine1' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'JanitorRig_Neck2'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: JanitorRig_Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_LThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_RThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_LCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_RCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_LFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_RFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_Spine2
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_Spine3
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_Neck1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_LCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_RCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_LUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_RUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_LForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_RForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_LPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_RPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JanitorRig_Ribcage
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Janitor_V4(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Janitor_Root
+      parentName: Janitor_V4(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Janitor_Mesh
+      parentName: Janitor_Root
+      position: {x: -0.0012862914, y: 0.49706802, z: 0.053345107}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JanitorRig_
+      parentName: Janitor_V4(Clone)
+      position: {x: -0.008320005, y: 0, z: 0.009645381}
+      rotation: {x: 0.50000006, y: -0.5, z: -0.4999999, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JanitorRig_LPlatform
+      parentName: Janitor_V4(Clone)
+      position: {x: -0.25232536, y: -7.1206563e-10, z: 0.036710683}
+      rotation: {x: 0.50000006, y: -0.4999999, z: -0.49999994, w: 0.5000001}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JanitorRig_RPlatform
+      parentName: Janitor_V4(Clone)
+      position: {x: 0.23568535, y: -7.1207856e-10, z: 0.036710754}
+      rotation: {x: 0.50000006, y: -0.4999999, z: -0.49999994, w: 0.5000001}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JanitorRig_Pelvis
+      parentName: Janitor_V4(Clone)
+      position: {x: 5.9604643e-10, y: 0.18791942, z: -0.014811906}
+      rotation: {x: 0.499127, y: -0.50087154, z: -0.49912688, w: 0.5008715}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: JanitorRig_Spine1
+      parentName: JanitorRig_Pelvis
+      position: {x: -0.015519829, y: -0.0011874306, z: -0.0000000029470175}
+      rotation: {x: 0.0000004023313, y: 0.000000059604638, z: 0.14381488, w: -0.98960465}
+      scale: {x: 1, y: 1.000001, z: 1}
+    - name: JanitorRig_Spine2
+      parentName: JanitorRig_Spine1
+      position: {x: -0.10001668, y: 0, z: 1.8189894e-14}
+      rotation: {x: -0.0000004172325, y: -0.000000029802322, z: -0.16910094, w: -0.9855988}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+    - name: JanitorRig_Spine3
+      parentName: JanitorRig_Spine2
+      position: {x: -0.08520086, y: 0, z: 0}
+      rotation: {x: -0, y: 0.000000029802322, z: 0.07206601, w: 0.9973999}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: JanitorRig_Ribcage
+      parentName: JanitorRig_Spine3
+      position: {x: -0.09155907, y: -0.000000009536743, z: 0}
+      rotation: {x: 0.000000159538, y: 0.00000089412265, z: -0.5184907, w: 0.8550834}
+      scale: {x: 0.9999989, y: 0.9999991, z: 1}
+    - name: JanitorRig_Neck1
+      parentName: JanitorRig_Ribcage
+      position: {x: -0.00026966093, y: -0.0011874282, z: -0.000000002280376}
+      rotation: {x: -0.000000029802322, y: -0.00000013411045, z: -0.02027613, w: 0.9997944}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: JanitorRig_Neck2
+      parentName: JanitorRig_Neck1
+      position: {x: -0.064827956, y: 0, z: 0}
+      rotation: {x: 0.000000029802322, y: 0.000000029802322, z: 0.000000044703484, w: 1}
+      scale: {x: 0.99999976, y: 0.9999998, z: 1}
+    - name: JanitorRig_Head
+      parentName: JanitorRig_Neck2
+      position: {x: -0.06482792, y: 0, z: -4.6566128e-12}
+      rotation: {x: -0, y: 0.000000104308135, z: 0.020276101, w: 0.9997944}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000001}
+    - name: JanitorRig_RCollarbone
+      parentName: JanitorRig_Ribcage
+      position: {x: 0.0058942414, y: 0.03446702, z: -0.010225589}
+      rotation: {x: -0.019814149, y: 0.7012766, z: -0.0836967, w: -0.7076817}
+      scale: {x: 1, y: 0.9999998, z: 0.9999998}
+    - name: JanitorRig_RUpperarm
+      parentName: JanitorRig_RCollarbone
+      position: {x: -0.20916714, y: 0.000000009536743, z: 0}
+      rotation: {x: 0.1421069, y: -0.041726455, z: -0.03805192, w: 0.9882391}
+      scale: {x: 1.0000021, y: 0.9999999, z: 0.9999988}
+    - name: JanitorRig_RForearm
+      parentName: JanitorRig_RUpperarm
+      position: {x: -0.08723604, y: 0, z: 0}
+      rotation: {x: -0.20866722, y: 0.01897757, z: -0.040826388, w: 0.97694993}
+      scale: {x: 0.9999961, y: 1, z: 1.0000035}
+    - name: JanitorRig_RPalm
+      parentName: JanitorRig_RForearm
+      position: {x: -0.063813016, y: -0.0000000047683715, z: 0}
+      rotation: {x: 0.66748893, y: 0.06476254, z: -0.0063945577, w: 0.7417705}
+      scale: {x: 1.00001, y: 0.9999874, z: 1.0000021}
+    - name: JanitorRig_LCollarbone
+      parentName: JanitorRig_Ribcage
+      position: {x: 0.0058942414, y: 0.03446702, z: 0.010225585}
+      rotation: {x: -0.019814163, y: 0.7012768, z: 0.08369671, w: 0.7076816}
+      scale: {x: 0.99999976, y: 0.99999994, z: 1}
+    - name: JanitorRig_LUpperarm
+      parentName: JanitorRig_LCollarbone
+      position: {x: -0.20916714, y: -0.000000009536743, z: 0.000000038146972}
+      rotation: {x: -0.14210707, y: 0.041726187, z: -0.038051896, w: 0.98823917}
+      scale: {x: 1.000001, y: 1.0000004, z: 0.99999917}
+    - name: JanitorRig_LForearm
+      parentName: JanitorRig_LUpperarm
+      position: {x: -0.08723608, y: 0, z: 0}
+      rotation: {x: 0.20866738, y: -0.018977752, z: -0.040825907, w: 0.9769498}
+      scale: {x: 1.000004, y: 0.9999999, z: 0.9999964}
+    - name: JanitorRig_LPalm
+      parentName: JanitorRig_LForearm
+      position: {x: -0.063813016, y: 0.0000000047683715, z: 0}
+      rotation: {x: -0.66748893, y: -0.06476243, z: -0.00639443, w: 0.7417705}
+      scale: {x: 0.9999898, y: 1.000015, z: 0.99999636}
+    - name: JanitorRig_RThigh
+      parentName: JanitorRig_Pelvis
+      position: {x: 0.018703155, y: 0.015855338, z: -0.17054097}
+      rotation: {x: -0.03477095, y: 0.98919255, z: 0.035579473, w: -0.13792491}
+      scale: {x: 1.0000007, y: 0.9999999, z: 0.99999976}
+    - name: JanitorRig_RCalf
+      parentName: JanitorRig_RThigh
+      position: {x: -0.12158374, y: 0.000000017881392, z: -0.000000038146972}
+      rotation: {x: 0.036570337, y: -0.14706358, z: 0.18441403, w: 0.9710955}
+      scale: {x: 1.0000011, y: 0.99999994, z: 0.99999917}
+    - name: JanitorRig_RFoot
+      parentName: JanitorRig_RCalf
+      position: {x: -0.053656206, y: 0, z: -0.000000019073486}
+      rotation: {x: -0.020952774, y: -0.008669933, z: -0.73189235, w: 0.6810429}
+      scale: {x: 1.0000023, y: 0.999998, z: 1.0000002}
+    - name: JanitorRig_LThigh
+      parentName: JanitorRig_Pelvis
+      position: {x: 0.018703155, y: 0.015855338, z: 0.17054097}
+      rotation: {x: -0.0057324474, y: 0.9891938, z: -0.024922762, w: 0.14436652}
+      scale: {x: 0.99999875, y: 0.9999997, z: 1.0000007}
+    - name: JanitorRig_LCalf
+      parentName: JanitorRig_LThigh
+      position: {x: -0.12158372, y: 0.000000017881392, z: 0.000000095367426}
+      rotation: {x: -0.03762459, y: 0.00000073015696, z: -0.00000042095783, w: 0.99929196}
+      scale: {x: 0.99999624, y: 0.99999917, z: 1.0000051}
+    - name: JanitorRig_LFoot
+      parentName: JanitorRig_LCalf
+      position: {x: -0.05365621, y: 0, z: 0}
+      rotation: {x: -0.08012518, y: 0.120281406, z: -0.60717356, w: 0.7813147}
+      scale: {x: 0.999996, y: 1.0000021, z: 1.0000024}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
