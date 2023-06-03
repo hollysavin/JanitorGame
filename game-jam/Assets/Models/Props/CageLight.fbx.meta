@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 00ec7814a27e16b4fabc92e6021c9928
+guid: b9e36afc5755f264aa99201622f0d512
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,10 +7,15 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 0ff7495290ec2c74f91eae4ce7f82dfd, type: 2}
+      name: Frame
+    second: {fileID: 2100000, guid: 4c6b6bd02b3876048a53ae433bf18e75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: e3a6a01e3f548df4ea3205194478b08a, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
