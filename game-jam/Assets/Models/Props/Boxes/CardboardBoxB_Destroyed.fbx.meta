@@ -3,7 +3,12 @@ guid: d3728564753de8c42a7be58f69d7fe2a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box Destroyed
+    second: {fileID: 2100000, guid: 2d6e5d54ba31d9b498322f4416fd93a9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
