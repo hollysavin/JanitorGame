@@ -74,10 +74,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Item")
         {
             isGrounded = true;
             anim.SetBool("Jumping", false);
@@ -86,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Item")
         {
             isGrounded = false;
             anim.SetBool("Jumping", true);
