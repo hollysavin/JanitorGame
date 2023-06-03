@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody rb = null;
 
+    private Animator anim;
+
     Vector3 playerMoveInput = Vector3.zero;
     [SerializeField] float movementMultiplyer;
     [SerializeField] float jumpMultiplyer;
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         distToGround = GetComponent<Collider>().bounds.extents.y;
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -28,7 +31,16 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        rb.MovePosition(transform.position + playerMoveInput * Time.deltaTime * movementMultiplyer);
+        if (playerMoveInput == Vector3.zero)
+        {
+            anim.SetBool("Moving", false);
+            return;
+        }
+        else
+        {
+            rb.MovePosition(transform.position + playerMoveInput * Time.deltaTime * movementMultiplyer);
+            anim.SetBool("Moving", true);
+        }
     }
 
     private void ApplyRotation()
@@ -46,6 +58,7 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         playerMoveInput = new Vector3(context.ReadValue<Vector2>().x, 0.0f, context.ReadValue<Vector2>().y);
+
     }
 
     public void OnJump(InputAction.CallbackContext context)
