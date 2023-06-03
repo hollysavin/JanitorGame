@@ -35,12 +35,12 @@ public class SweepItem : MonoBehaviour
             
             if (Input.GetMouseButtonDown(0))
             {
-                hitObject.GetComponent<Rigidbody>().AddForce(-sweepForce, 0, 0);
+                hitObject.GetComponent<Rigidbody>().AddForce(0, 0, sweepForce);
             }
 
             if (Input.GetMouseButtonDown(1))
             {
-                hitObject.GetComponent<Rigidbody>().AddForce(sweepForce, 0, 0);
+                hitObject.GetComponent<Rigidbody>().AddForce(0, 0, -sweepForce);
             }
         }
         else if (hitObject != null)
