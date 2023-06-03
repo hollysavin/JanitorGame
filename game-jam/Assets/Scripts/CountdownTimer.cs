@@ -9,8 +9,12 @@ public class CountdownTimer : MonoBehaviour
     public int countdownTime;
     public TextMeshProUGUI timerText;
 
+    public AudioSource audioSource;
+    public AudioClip coundownAudio;
+
 private void Start()
     {
+        audioSource.PlayOneShot(coundownAudio);
         StartCoroutine(CountdownToStart());
     }
 
@@ -21,7 +25,7 @@ private void Start()
         {
             timerText.text = countdownTime.ToString();
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
 
             countdownTime--;
             Debug.Log(countdownTime);
@@ -31,7 +35,7 @@ private void Start()
 
         //GameManager.BeginGame();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         timerText.gameObject.SetActive(false);
     }

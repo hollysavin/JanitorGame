@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Countdown()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6);
         UpdateGameState(GameState.IntensityLow);
     }
 }
