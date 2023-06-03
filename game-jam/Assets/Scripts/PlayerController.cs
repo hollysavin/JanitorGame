@@ -10,16 +10,29 @@ public class PlayerController : MonoBehaviour
 
     Vector3 playerMoveInput = Vector3.zero;
     [SerializeField] float movementMultiplyer;
+    [SerializeField] float jumpMultiplyer;
+
+    private float distToGround;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(transform.position + playerMoveInput * Time.deltaTime * movementMultiplyer);
+        ApplyMovement();
+        ApplyRotation();
+    }
 
+    private void ApplyMovement()
+    {
+        rb.MovePosition(transform.position + playerMoveInput * Time.deltaTime * movementMultiplyer);
+    }
+
+    private void ApplyRotation()
+    {
         if (playerMoveInput == Vector3.zero)
         {
             return;
@@ -32,6 +45,24 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-       playerMoveInput = new Vector3(context.ReadValue<Vector2>().x, 0.0f, context.ReadValue<Vector2>().y);
+        playerMoveInput = new Vector3(context.ReadValue<Vector2>().x, 0.0f, context.ReadValue<Vector2>().y);
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if(isGrounded())
+        {
+            rb.AddForce(Vector2.up * jumpMultiplyer);
+        }
+    }
+
+    public void OnSweep(InputAction.CallbackContext context)
+    {
+
+    }
+
+    private bool isGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f);
     }
 }
