@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 21784382}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -808,7 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ecbeb50f13273e49979667a10bda5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sweepForce: 1000
+  sweepForce: 200
 --- !u!1001 &1035241156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -985,8 +985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8615c1c7349953f4e82f666417a54f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementMultiplyer: 4
-  jumpMultiplyer: 70
+  movementMultiplier: 4
+  jumpMultiplier: 10
 --- !u!54 &1430772358
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -995,7 +995,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430772356}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -1394,7 +1394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727522908634951654, guid: 973fbfd5560e40f479e6a550cc477aaf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.023
       objectReference: {fileID: 0}
     - target: {fileID: 8727522908634951654, guid: 973fbfd5560e40f479e6a550cc477aaf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1402,7 +1402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727522908634951654, guid: 973fbfd5560e40f479e6a550cc477aaf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -9.983
       objectReference: {fileID: 0}
     - target: {fileID: 8727522908634951654, guid: 973fbfd5560e40f479e6a550cc477aaf, type: 3}
       propertyPath: m_LocalRotation.w

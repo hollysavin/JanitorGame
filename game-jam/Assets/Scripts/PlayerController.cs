@@ -11,15 +11,14 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     Vector3 playerMoveInput = Vector3.zero;
-    [SerializeField] float movementMultiplyer;
-    [SerializeField] float jumpMultiplyer;
+    [SerializeField] float movementMultiplier;
+    [SerializeField] float jumpMultiplier;
 
-    private float distToGround;
+    private bool isGrounded = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        distToGround = GetComponent<Collider>().bounds.extents.y;
         anim = GetComponentInChildren<Animator>();
     }
 
@@ -38,7 +37,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.MovePosition(transform.position + playerMoveInput * Time.deltaTime * movementMultiplyer);
+            rb.MovePosition(transform.position + playerMoveInput * Time.deltaTime * movementMultiplier);
             anim.SetBool("Moving", true);
         }
     }
@@ -63,9 +62,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(isGrounded())
+        if(isGrounded)
         {
-            rb.AddForce(Vector2.up * jumpMultiplyer);
+            rb.AddForce(Vector2.up * jumpMultiplier);
         }
     }
 
@@ -74,8 +73,20 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private bool isGrounded()
+
+    private void OnCollisionStay(Collision collision)
     {
-        return Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f);
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
     }
 }
