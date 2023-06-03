@@ -12,10 +12,13 @@ public class CountdownTimer : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip coundownAudio;
 
+    public Canvas playerArrow;
+
 private void Start()
     {
         audioSource.PlayOneShot(coundownAudio);
         StartCoroutine(CountdownToStart());
+        playerArrow.gameObject.SetActive(true);
     }
 
     IEnumerator CountdownToStart()
@@ -38,5 +41,6 @@ private void Start()
         yield return new WaitForSeconds(3f);
 
         timerText.gameObject.SetActive(false);
+        playerArrow.gameObject.SetActive(false);
     }
 }
