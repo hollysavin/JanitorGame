@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+            anim.SetBool("Jumping", false);
         }
     }
 
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = false;
+            anim.SetBool("Jumping", true);
         }
     }
 }
