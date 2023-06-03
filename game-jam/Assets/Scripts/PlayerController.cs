@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Vector3 playerMoveInput = Vector3.zero;
     [SerializeField] float movementMultiplier;
     [SerializeField] float jumpMultiplier;
+    [SerializeField] float turnSpeed;
 
     private bool isGrounded = false;
 
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Quaternion targetRotation = Quaternion.LookRotation(playerMoveInput);
-        targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
+        targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
         rb.MoveRotation(targetRotation);
     }
 
