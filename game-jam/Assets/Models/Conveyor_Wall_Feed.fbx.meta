@@ -3,7 +3,17 @@ guid: 1433ca0653efa8b4680a8c48c8c748d2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FlapFrame
+    second: {fileID: 2100000, guid: 4c6b6bd02b3876048a53ae433bf18e75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flaps
+    second: {fileID: 2100000, guid: cc373415f0cbfbc4a8f92fb8063cf802, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
