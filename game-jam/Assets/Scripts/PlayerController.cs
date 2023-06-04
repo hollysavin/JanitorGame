@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     public AudioSource FallOffMapAudio;
     public AudioSource SweepAudio;
 
-
     public AudioClip[] JumpArray;
     private int JumpClipIndex;
 

@@ -8114,7 +8114,6 @@ MonoBehaviour:
   timerText: {fileID: 1489076479}
   audioSource: {fileID: 156235622}
   coundownAudio: {fileID: 8300000, guid: f176e9e40f803c040a8951f40f3b7ab6, type: 3}
-  playerArrow: {fileID: 0}
 --- !u!4 &982953131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00ec7814a27e16b4fabc92e6021c9928, type: 3}
@@ -8243,10 +8242,11 @@ GameObject:
   - component: {fileID: 1037412638}
   - component: {fileID: 1037412637}
   - component: {fileID: 1037412636}
+  - component: {fileID: 1037412640}
   - component: {fileID: 1037412639}
   m_Layer: 0
   m_Name: Screamzone
-  m_TagString: Untagged
+  m_TagString: Screamzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8262,8 +8262,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.85327876, y: 0.08059672, z: 0.8348737}
-  m_Center: {x: 0.13081536, y: -3.3479342, z: -0.30683136}
+  m_Size: {x: 0.85327876, y: 0.9754214, z: 0.8348737}
+  m_Center: {x: 0.13081536, y: -3.7953467, z: -0.30683136}
 --- !u!33 &1037412637
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8287,7 +8287,103 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1037412639
+--- !u!82 &1037412639
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037412634}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.56
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1037412640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8299,8 +8395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e25517e83159ba458ef91d15b526310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScreamSource: {fileID: 0}
   ScreamAudio: {fileID: 8300000, guid: 8dffc35d84f6b084094302bc3a647b77, type: 3}
+  ScreamSource: {fileID: 1037412639}
 --- !u!4 &1041126243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00ec7814a27e16b4fabc92e6021c9928, type: 3}

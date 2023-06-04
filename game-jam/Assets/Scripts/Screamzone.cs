@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Screamzone : MonoBehaviour
 {
-    public AudioSource ScreamSource;
     public AudioClip ScreamAudio;
-
+    public AudioSource ScreamSource;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-        
             ScreamSource.PlayOneShot(ScreamAudio);
-            
         }
     }
 }
