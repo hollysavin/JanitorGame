@@ -31,7 +31,6 @@ private void Start()
             yield return new WaitForSeconds(2f);
 
             countdownTime--;
-            Debug.Log(countdownTime);
         }
 
         timerText.text = "GO!";
