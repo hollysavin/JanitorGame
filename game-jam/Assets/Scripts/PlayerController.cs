@@ -99,11 +99,11 @@ public class PlayerController : MonoBehaviour
         isAttacking = true;
         anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 1);
         anim.SetTrigger("Sweep");
+        PlayRandomSweep();
         yield return new WaitForSeconds(0.8f);
 
         anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 0);
         isAttacking = false;
-        PlayRandomSweep();
     }
 
     private void OnCollisionStay(Collision collision)
