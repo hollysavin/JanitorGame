@@ -1,0 +1,17 @@
+this game is inteded for play with more than one player and up to 4 players
+
+it can be played by pressing enter on keyboard or start on controller
+
+survive as long as you can while sweeping away boxes with your broom
+
+Keyboard
+WASD - Move
+E - Sweep Brush
+Space - Jump
+
+Controller
+Left Stick - Move
+Left Bumper - Sweep Brush
+South Button (A or X) - Jump
+
+hope you enjoy!
