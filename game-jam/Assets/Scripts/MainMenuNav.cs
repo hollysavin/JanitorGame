@@ -12,11 +12,11 @@ public class MainMenuNav : MonoBehaviour
     public AudioSource MenuBackSource;
     public AudioClip MenuBackClip;
     public AudioSource MenuMusicSource;
-    public AudioClip MenuMusicClip;
+    
 
     void Start()
     {
-        MenuMusicSource.PlayOneShot(MenuMusicClip);
+        MenuMusicSource.Play();
         startBtn.onClick.AddListener(StartOnClick);
         quitBtn.onClick.AddListener(QuitOnClick);
     }

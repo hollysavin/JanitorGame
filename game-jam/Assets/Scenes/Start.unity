@@ -1345,9 +1345,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: dcf40d02ba3e76343aa0fc8ce1e34419, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.721
+  m_Volume: 0.544
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6993,7 +6993,6 @@ MonoBehaviour:
   MenuBackSource: {fileID: 1544780344}
   MenuBackClip: {fileID: 8300000, guid: f7b884cda592c6a46b5d6dc4947d2ba9, type: 3}
   MenuMusicSource: {fileID: 284796846}
-  MenuMusicClip: {fileID: 8300000, guid: dcf40d02ba3e76343aa0fc8ce1e34419, type: 3}
 --- !u!1 &1387540330
 GameObject:
   m_ObjectHideFlags: 0
