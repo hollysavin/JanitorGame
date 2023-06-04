@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 144796955347090021}
   - component: {fileID: 2731041033723154095}
   - component: {fileID: 3613873686059618857}
-  - component: {fileID: 3613873686059618854}
   m_Layer: 0
   m_Name: Brush
   m_TagString: Untagged
@@ -182,16 +181,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020523615, y: 0.0039488263, z: 0.007341866}
   m_Center: {x: 0.000000029590717, y: 0.00000004421374, z: 0.003312144}
---- !u!65 &3613873686059618854
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4532423503147315066}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0023107359, y: 0.0039488263, z: 0.023075813}
-  m_Center: {x: -0.00007224685, y: 0.00000015662307, z: 0.018990064}

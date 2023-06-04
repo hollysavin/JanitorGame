@@ -93,9 +93,6 @@ public class GameManager : MonoBehaviour
         MusicTrackSource.Stop();
         MusicTrackSource.PlayOneShot(MusicTrackClip3);
     }
-
-    
-
 }
 
 public enum GameState
