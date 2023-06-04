@@ -12,7 +12,7 @@ public class Screamzone : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            Debug.Log("triggerenter");
+        
             ScreamSource.PlayOneShot(ScreamAudio);
             
         }
