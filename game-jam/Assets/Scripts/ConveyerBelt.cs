@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class ConveyerBelt : MonoBehaviour
@@ -12,7 +13,10 @@ public class ConveyerBelt : MonoBehaviour
     private bool isRunning;
     //Controls the speed of the conveyer belt
     //LOW, MEDIUM, HIGH intensity levels for each state
-    private const float LOW = 1, MEDIUM = 2, HIGH = 2.5f;
+    private const float LOW = 1, MEDIUM = 1.2f, HIGH = 1.7f;
+
+    [SerializeField]
+    private Material[] materials;
 
     private void Awake()
     {
@@ -34,14 +38,17 @@ public class ConveyerBelt : MonoBehaviour
                 {
                     isRunning = true;
                 }
+                SetMaterial(materials[0], materials[1]);
                 break;
             case GameState.IntensityMedium:
                 speed = MEDIUM;
                 direction *= -1;
+                SetMaterial(materials[2], materials[3]);
                 break;
             case GameState.IntensityHigh:
                 speed = HIGH;
                 direction *= -1;
+                SetMaterial(materials[4], materials[5]);
                 break;
             case GameState.End:
                 isRunning = false;
@@ -63,6 +70,25 @@ public class ConveyerBelt : MonoBehaviour
             body.position += direction * speed * Time.deltaTime;
             body.MovePosition(pos);
         }
+    }
+
+    private void SetMaterial(Material forward, Material inverse)
+    {
+        Material[] tempMats = GetComponent<MeshRenderer>().materials;
+        if (IsInverse())
+        {
+            tempMats[1] = inverse;
+            GetComponent<MeshRenderer>().materials = tempMats;
+        } else
+        {
+            tempMats[1] = forward;
+            GetComponent<MeshRenderer>().materials = tempMats;
+        }
+    }
+
+    private bool IsInverse()
+    {
+        return (direction.x == 1 || direction.z == -1);
     }
 
 }
