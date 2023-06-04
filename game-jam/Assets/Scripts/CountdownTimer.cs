@@ -29,7 +29,7 @@ private void Start()
             countdownTime--;
         }
 
-        timerText.text = "GO!";
+        timerText.text = "SURVIVE!";
 
         //GameManager.BeginGame();
 
