@@ -375,7 +375,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.443
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -503,7 +503,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -772,6 +772,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bfd52e06d007140888b53e7115fcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicTrackSource: {fileID: 449069697}
+  AlarmSource: {fileID: 377271702}
+  MusicTrackClip1: {fileID: 8300000, guid: 9f8a0aed4fd16474f98c6d82b6c263e9, type: 3}
+  MusicTrackClip2: {fileID: 8300000, guid: 3db36c94e58f87d419658d878983db9c, type: 3}
+  MusicTrackClip3: {fileID: 8300000, guid: f4ea7ac3a023cf14bbef55df9f66bbae, type: 3}
+  AlarmClip: {fileID: 8300000, guid: a03fb1bfb1963fa46b44eca20731282d, type: 3}
   state: 0
 --- !u!223 &746050440 stripped
 Canvas:
@@ -822,7 +828,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.625
+  m_Volume: 0.513
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1972,6 +1978,14 @@ PrefabInstance:
     - target: {fileID: 599403894345416027, guid: 23192dff539b58d4a92cbd7aac802a57, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 599403895182826874, guid: 23192dff539b58d4a92cbd7aac802a57, type: 3}
+      propertyPath: m_Volume
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 599403896297027114, guid: 23192dff539b58d4a92cbd7aac802a57, type: 3}
+      propertyPath: m_Volume
+      value: 0.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23192dff539b58d4a92cbd7aac802a57, type: 3}
