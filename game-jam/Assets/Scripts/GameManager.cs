@@ -45,15 +45,12 @@ public class GameManager : MonoBehaviour
                 StartCoroutine("HandleCountDown");
                 break;
             case GameState.IntensityLow:
-                Debug.Log("LOW");
                 StartCoroutine("HandleIntensityLow");
                 break;
             case GameState.IntensityMedium:
-                Debug.Log("MEDIUM");
                 StartCoroutine("HandleIntensityMedium");
                 break;
             case GameState.IntensityHigh:
-                Debug.Log("HIGH");
                 HandleIntensityHigh();
                 break;
             case GameState.End:
