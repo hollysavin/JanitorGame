@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> prefabList;
     private bool isRunning = false;
+    //Controls the spawn rate of items in seconds
+    //LOW, MEDIUM, HIGH intensity levels for each state
+    private int spawnRate;
+    private const int LOW = 3, MEDIUM = 2, HIGH = 1;
 
     private void Awake()
     {
@@ -20,10 +25,25 @@ public class ObjectSpawner : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        if(state == GameState.IntensityLow && isRunning == false)
+        switch (state)
         {
-            StartCoroutine("SpawnItem");
-            isRunning = true;
+            case GameState.IntensityLow:
+                if (isRunning == false)
+                {
+                    spawnRate = LOW;
+                    StartCoroutine("SpawnItem");
+                    isRunning = true;
+                }
+                break;
+            case GameState.IntensityMedium:
+                spawnRate = MEDIUM;
+                break;
+            case GameState.IntensityHigh:
+                spawnRate = HIGH;
+                break;
+            case GameState.End:
+                //Stop
+                break;
         }
     }
 
@@ -33,7 +53,7 @@ public class ObjectSpawner : MonoBehaviour
         {
             GameObject randomObj = prefabList[Random.Range(0, (prefabList.Count))];
             Instantiate(randomObj, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(spawnRate);
         }
     }
 

@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public GameState state;
 
+    const int COUNTDOWN = 6, INTENSITY_DURATION = 6;
+
     public object HandleGameover { get; private set; }
 
     public static event Action<GameState> OnGameStateChange;
@@ -30,15 +32,18 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.CountDown:
-                HandleGameCountDown();
+                StartCoroutine("HandleCountDown");
                 break;
             case GameState.IntensityLow:
-                HandleIntensityLow();
+                Debug.Log("LOW");
+                StartCoroutine("HandleIntensityLow");
                 break;
             case GameState.IntensityMedium:
-                HandleIntensityMedium();
+                Debug.Log("MEDIUM");
+                StartCoroutine("HandleIntensityMedium");
                 break;
             case GameState.IntensityHigh:
+                Debug.Log("HIGH");
                 HandleIntensityHigh();
                 break;
             case GameState.End:
@@ -48,33 +53,31 @@ public class GameManager : MonoBehaviour
         OnGameStateChange?.Invoke(newState);
     }
 
-
-    private void HandleGameCountDown()
-    {
-        StartCoroutine("Countdown");
-    }
-    private void HandleIntensityLow()
-    {
-
-    }
-    private void HandleIntensityMedium()
-    {
-        throw new NotImplementedException();
-    }
-    private void HandleIntensityHigh()
-    {
-        throw new NotImplementedException();
-    }
     private void HandleGameEnd()
     {
-        throw new NotImplementedException();
     }
 
-    IEnumerator Countdown()
+    IEnumerator HandleCountDown()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(COUNTDOWN);
         UpdateGameState(GameState.IntensityLow);
     }
+
+    IEnumerator HandleIntensityLow()
+    {
+        yield return new WaitForSeconds(INTENSITY_DURATION);
+        UpdateGameState(GameState.IntensityMedium);
+    }
+    IEnumerator HandleIntensityMedium()
+    {
+        yield return new WaitForSeconds(INTENSITY_DURATION);
+        UpdateGameState(GameState.IntensityHigh);
+    }
+
+    private void HandleIntensityHigh()
+    {
+    }
+
 }
 
 public enum GameState

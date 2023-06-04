@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ConveyerBelt : MonoBehaviour
 {
+    private float speed;
     [SerializeField]
-    private float _speed;
-    [SerializeField]
-    private Vector3 _direction;
+    private Vector3 direction;
 
-    private Rigidbody _body;
+    private Rigidbody body;
     private bool isRunning;
+    //Controls the speed of the conveyer belt
+    //LOW, MEDIUM, HIGH intensity levels for each state
+    private const float LOW = 1, MEDIUM = 2, HIGH = 2.5f;
 
     private void Awake()
     {
@@ -24,25 +26,42 @@ public class ConveyerBelt : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        if (state == GameState.IntensityLow && isRunning == false)
+        switch (state)
         {
-            isRunning = true;
+            case GameState.IntensityLow:
+                speed = LOW;
+                if (isRunning == false)
+                {
+                    isRunning = true;
+                }
+                break;
+            case GameState.IntensityMedium:
+                speed = MEDIUM;
+                direction *= -1;
+                break;
+            case GameState.IntensityHigh:
+                speed = HIGH;
+                direction *= -1;
+                break;
+            case GameState.End:
+                isRunning = false;
+                break;
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _body = GetComponent<Rigidbody>();
+        body = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
         if (isRunning)
         {
-            Vector3 pos = _body.position;
-            _body.position += _direction * _speed * Time.deltaTime;
-            _body.MovePosition(pos);
+            Vector3 pos = body.position;
+            body.position += direction * speed * Time.deltaTime;
+            body.MovePosition(pos);
         }
     }
 
