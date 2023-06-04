@@ -8,7 +8,7 @@ public class CountdownTimer : MonoBehaviour
 {
     public int countdownTime;
     public TextMeshProUGUI timerText;
-
+    public TextMeshProUGUI instructionText;
     public AudioSource audioSource;
     public AudioClip coundownAudio;
 
@@ -34,7 +34,7 @@ private void Start()
         //GameManager.BeginGame();
 
         yield return new WaitForSeconds(3f);
-
+        instructionText.gameObject.SetActive(false);
         timerText.gameObject.SetActive(false);
     }
 }

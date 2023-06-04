@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     public AudioClip MusicTrackClip3;
     public AudioClip AlarmClip;
 
-
+    public TextMeshProUGUI timerText;
 
     public static GameManager _instance;
 
@@ -72,6 +73,9 @@ public class GameManager : MonoBehaviour
     {
         gameStarted = false;
         MusicTrackSource.Stop();
+        timerText.gameObject.SetActive(true);
+        timerText.text = "You win!";
+        StartCoroutine("ExitToMenu");
     }
 
     IEnumerator HandleCountDown()
@@ -103,6 +107,12 @@ public class GameManager : MonoBehaviour
         {
             UpdateGameState(GameState.IntensityHigh);
         }
+    }
+
+    IEnumerator ExitToMenu()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("Start");
     }
 
     private void HandleIntensityHigh()
