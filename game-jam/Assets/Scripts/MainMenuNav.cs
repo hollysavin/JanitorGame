@@ -5,16 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuNav : MonoBehaviour
 {
-    public Button onePlayerBtn;
+    public Button startBtn, quitBtn;
 
     void Start()
     {
-        Button btn = onePlayerBtn.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        startBtn.onClick.AddListener(StartOnClick);
+        quitBtn.onClick.AddListener(QuitOnClick);
     }
 
-    void TaskOnClick()
+    void StartOnClick()
     {
         SceneManager.LoadScene("GameLevel");
+    }
+
+    void QuitOnClick()
+    {
+        //quit
+        Debug.Log("quit game");
     }
 }
