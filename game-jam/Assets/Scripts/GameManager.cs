@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public GameState state;
 
     const int COUNTDOWN = 6, INTENSITY_DURATION = 20;
+    private int currentPlayerCount = 0;
+    private bool gameStarted = false;
 
     public object HandleGameover { get; private set; }
 
@@ -33,6 +35,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateGameState(GameState.CountDown);
+    }
+
+    private void Update()
+    {
+        currentPlayerCount = GameObject.FindGameObjectsWithTag("Player").Length;
+        CheckForWinner();
     }
 
     public void UpdateGameState(GameState newState)
@@ -62,21 +70,28 @@ public class GameManager : MonoBehaviour
 
     private void HandleGameEnd()
     {
+        gameStarted = false;
+        MusicTrackSource.Stop();
     }
 
     IEnumerator HandleCountDown()
     {
-        
         yield return new WaitForSeconds(COUNTDOWN);
-        UpdateGameState(GameState.IntensityLow);
+        gameStarted = true;
+        if (currentPlayerCount != 1)
+        {
+            UpdateGameState(GameState.IntensityLow);
+        }
     }
 
     IEnumerator HandleIntensityLow()
     {
-
         MusicTrackSource.PlayOneShot(MusicTrackClip1);
         yield return new WaitForSeconds(INTENSITY_DURATION);
-        UpdateGameState(GameState.IntensityMedium);
+        if (currentPlayerCount != 1)
+        {
+            UpdateGameState(GameState.IntensityMedium);
+        }
     }
     IEnumerator HandleIntensityMedium()
     {
@@ -84,7 +99,10 @@ public class GameManager : MonoBehaviour
         MusicTrackSource.Stop();
         MusicTrackSource.PlayOneShot(MusicTrackClip2);
         yield return new WaitForSeconds(INTENSITY_DURATION);
-        UpdateGameState(GameState.IntensityHigh);
+        if (currentPlayerCount != 1)
+        {
+            UpdateGameState(GameState.IntensityHigh);
+        }
     }
 
     private void HandleIntensityHigh()
@@ -92,6 +110,14 @@ public class GameManager : MonoBehaviour
         AlarmSource.PlayOneShot(AlarmClip);
         MusicTrackSource.Stop();
         MusicTrackSource.PlayOneShot(MusicTrackClip3);
+    }
+
+    private void CheckForWinner()
+    {
+        if (currentPlayerCount == 1 && gameStarted)
+        {
+            UpdateGameState(GameState.End);
+        }
     }
 }
 

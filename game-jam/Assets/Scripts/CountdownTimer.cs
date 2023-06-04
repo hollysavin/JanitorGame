@@ -20,7 +20,6 @@ private void Start()
 
     IEnumerator CountdownToStart()
     {
-        Debug.Log("started Countdown");
         while(countdownTime > 0)
         {
             timerText.text = countdownTime.ToString();

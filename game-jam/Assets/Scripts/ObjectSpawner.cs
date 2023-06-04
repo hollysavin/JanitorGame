@@ -32,7 +32,6 @@ public class ObjectSpawner : MonoBehaviour
                 {
                     spawnRate = LOW;
                     StartCoroutine("SpawnItem");
-                    isRunning = true;
                 }
                 break;
             case GameState.IntensityMedium:
@@ -42,14 +41,15 @@ public class ObjectSpawner : MonoBehaviour
                 spawnRate = HIGH;
                 break;
             case GameState.End:
-                //Stop
+                isRunning = false;
                 break;
         }
     }
 
     IEnumerator SpawnItem()
     {
-        while (true)
+        isRunning = true;
+        while (isRunning)
         {
             GameObject randomObj = prefabList[Random.Range(0, (prefabList.Count))];
             Instantiate(randomObj, transform.position, Quaternion.identity);

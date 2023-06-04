@@ -51,6 +51,7 @@ public class ConveyerBelt : MonoBehaviour
                 SetMaterial(materials[4], materials[5]);
                 break;
             case GameState.End:
+                SetMaterial(materials[6], materials[6]);
                 isRunning = false;
                 break;
         }
