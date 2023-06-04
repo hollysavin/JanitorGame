@@ -8041,6 +8041,7 @@ GameObject:
   - component: {fileID: 980456565}
   - component: {fileID: 980456564}
   - component: {fileID: 980456568}
+  - component: {fileID: 980456569}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -8114,6 +8115,20 @@ MonoBehaviour:
   timerText: {fileID: 1489076479}
   audioSource: {fileID: 156235622}
   coundownAudio: {fileID: 8300000, guid: f176e9e40f803c040a8951f40f3b7ab6, type: 3}
+--- !u!114 &980456569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980456563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033b3df4e8cfb724792d1189edb7ac6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light1: {fileID: 1918598348}
+  light2: {fileID: 862062605}
 --- !u!4 &982953131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00ec7814a27e16b4fabc92e6021c9928, type: 3}
