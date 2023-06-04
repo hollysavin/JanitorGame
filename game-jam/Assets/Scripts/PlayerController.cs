@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float turnSpeed;
 
     private bool isGrounded = false;
+    private bool isAttacking = false;
 
     void Start()
     {
@@ -33,13 +34,13 @@ public class PlayerController : MonoBehaviour
     {
         if (playerMoveInput == Vector3.zero)
         {
-            anim.SetBool("Moving", false);
+            anim.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
             return;
         }
         else
         {
             rb.MovePosition(transform.position + playerMoveInput * Time.deltaTime * movementMultiplier);
-            anim.SetBool("Moving", true);
+            anim.SetFloat("Speed", 1, 0.1f, Time.deltaTime);
         }
     }
 
@@ -66,12 +67,23 @@ public class PlayerController : MonoBehaviour
         if(isGrounded)
         {
             rb.AddForce(Vector2.up * jumpMultiplier);
+            anim.SetBool("Jumping", true);
         }
     }
 
     public void OnSweep(InputAction.CallbackContext context)
     {
+        if(!isAttacking) StartCoroutine(Sweep());
+    }
+    IEnumerator Sweep()
+    {
+        isAttacking = true;
+        anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 1);
+        anim.SetTrigger("Sweep");
+        yield return new WaitForSeconds(0.8f);
 
+        anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 0);
+        isAttacking = false;
     }
 
     private void OnCollisionStay(Collision collision)
@@ -88,7 +100,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Item")
         {
             isGrounded = false;
-            anim.SetBool("Jumping", true);
         }
     }
 }

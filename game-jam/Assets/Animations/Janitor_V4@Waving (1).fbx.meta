@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e87cb0e1fc5dc440a9d565af04d6bd0
+guid: 292543b56df482346b51675594599a87
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -17,16 +17,9 @@ ModelImporter:
     removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
-      rotation in copied configuration does not match rotation in animation file:\n\t'JanitorRig_Spine1'
-      : rotation error = 4.333533 deg\n\t'JanitorRig_Neck2' : rotation error = 12.123097
-      deg\n"
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'JanitorRig_Spine1' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'JanitorRig_Neck2'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0

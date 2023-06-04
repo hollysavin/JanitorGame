@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player Sweep Mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Janitor_Root
+    m_Weight: 0
+  - m_Path: Janitor_Root/Janitor_Mesh
+    m_Weight: 0
+  - m_Path: Janitor_Root/Janitor_Mesh_Smoothed
+    m_Weight: 0
+  - m_Path: JanitorRig_
+    m_Weight: 0
+  - m_Path: JanitorRig_LPlatform
+    m_Weight: 0
+  - m_Path: JanitorRig_Pelvis
+    m_Weight: 0
+  - m_Path: JanitorRig_Pelvis/JanitorRig_LThigh
+    m_Weight: 0
+  - m_Path: JanitorRig_Pelvis/JanitorRig_LThigh/JanitorRig_LCalf
+    m_Weight: 0
+  - m_Path: JanitorRig_Pelvis/JanitorRig_LThigh/JanitorRig_LCalf/JanitorRig_LFoot
+    m_Weight: 0
+  - m_Path: JanitorRig_Pelvis/JanitorRig_RThigh
+    m_Weight: 0
+  - m_Path: JanitorRig_Pelvis/JanitorRig_RThigh/JanitorRig_RCalf
+    m_Weight: 0
+  - m_Path: JanitorRig_Pelvis/JanitorRig_RThigh/JanitorRig_RCalf/JanitorRig_RFoot
+    m_Weight: 0
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_LCollarbone
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_LCollarbone/JanitorRig_LUpperarm
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_LCollarbone/JanitorRig_LUpperarm/JanitorRig_LForearm
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_LCollarbone/JanitorRig_LUpperarm/JanitorRig_LForearm/JanitorRig_LPalm
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_Neck1
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_Neck1/JanitorRig_Neck2
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_Neck1/JanitorRig_Neck2/JanitorRig_Head
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_RCollarbone
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_RCollarbone/JanitorRig_RUpperarm
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_RCollarbone/JanitorRig_RUpperarm/JanitorRig_RForearm
+    m_Weight: 1
+  - m_Path: JanitorRig_Pelvis/JanitorRig_Spine1/JanitorRig_Spine2/JanitorRig_Spine3/JanitorRig_Ribcage/JanitorRig_RCollarbone/JanitorRig_RUpperarm/JanitorRig_RForearm/JanitorRig_RPalm
+    m_Weight: 1
+  - m_Path: JanitorRig_RPlatform
+    m_Weight: 0
