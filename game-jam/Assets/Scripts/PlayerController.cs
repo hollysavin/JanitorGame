@@ -18,6 +18,24 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private bool isAttacking = false;
 
+    //audio
+
+    public AudioSource JumpAudio;
+    public AudioSource BoxHitAudio;
+    public AudioSource FallOffMapAudio;
+    public AudioSource SweepAudio;
+
+
+    public AudioClip[] JumpArray;
+    private int JumpClipIndex;
+
+    public AudioClip[] BoxArray;
+    private int BoxClipIndex;
+
+    public AudioClip[] SweepArray;
+    private int SweepClipIndex;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -64,10 +82,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(isGrounded)
+        if (isGrounded)
         {
             rb.AddForce(Vector2.up * jumpMultiplier);
             anim.SetBool("Jumping", true);
+            PlayRandomJump();
         }
     }
 
@@ -84,6 +103,7 @@ public class PlayerController : MonoBehaviour
 
         anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 0);
         isAttacking = false;
+        PlayRandomSweep();
     }
 
     private void OnCollisionStay(Collision collision)
@@ -92,6 +112,15 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             anim.SetBool("Jumping", false);
+
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Item")
+        {
+            PlayRandomBox();
         }
     }
 
@@ -102,4 +131,24 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
+
+
+    void PlayRandomJump()
+    {
+        JumpClipIndex = Random.Range(0, JumpArray.Length);
+        JumpAudio.PlayOneShot(JumpArray[JumpClipIndex]);
+    }
+
+    void PlayRandomBox()
+    {
+        BoxClipIndex = Random.Range(0, BoxArray.Length);
+        BoxHitAudio.PlayOneShot(BoxArray[BoxClipIndex]);
+    }
+
+    void PlayRandomSweep()
+    {
+        SweepClipIndex = Random.Range(0, SweepArray.Length);
+        SweepAudio.PlayOneShot(SweepArray[SweepClipIndex]);
+    }
+
 }
