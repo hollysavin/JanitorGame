@@ -8432,7 +8432,7 @@ GameObject:
   - component: {fileID: 1037412638}
   - component: {fileID: 1037412637}
   - component: {fileID: 1037412636}
-  - component: {fileID: 1037412635}
+  - component: {fileID: 1037412639}
   m_Layer: 0
   m_Name: Screamzone
   m_TagString: Untagged
@@ -8440,18 +8440,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1037412635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037412634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2610e42914549d4a8b3912123677c9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1037412636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8488,6 +8476,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1037412639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037412634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e25517e83159ba458ef91d15b526310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScreamSource: {fileID: 1189833848}
+  ScreamAudio: {fileID: 8300000, guid: 8dffc35d84f6b084094302bc3a647b77, type: 3}
 --- !u!4 &1041126243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00ec7814a27e16b4fabc92e6021c9928, type: 3}
@@ -9730,8 +9732,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 599403894345416027, guid: 23192dff539b58d4a92cbd7aac802a57, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 599403895866483442, guid: 23192dff539b58d4a92cbd7aac802a57, type: 3}
+      propertyPath: m_Volume
+      value: 0.568
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23192dff539b58d4a92cbd7aac802a57, type: 3}
+--- !u!82 &1189833848 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 599403895866483442, guid: 23192dff539b58d4a92cbd7aac802a57, type: 3}
+  m_PrefabInstance: {fileID: 1189833847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1200017366
 PrefabInstance:
   m_ObjectHideFlags: 0
