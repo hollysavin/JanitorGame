@@ -32,7 +32,6 @@ public class MainMenuNav : MonoBehaviour
     void QuitOnClick()
     {
         MenuBackSource.PlayOneShot(MenuBackClip);
-        //quit
-        Debug.Log("quit game");
+        Application.Quit();
     }
 }
