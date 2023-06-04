@@ -15,7 +15,6 @@ public class MainMenuNav : MonoBehaviour
 
     void TaskOnClick()
     {
-        Debug.Log("asdkuashd");
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("GameLevel");
     }
 }
