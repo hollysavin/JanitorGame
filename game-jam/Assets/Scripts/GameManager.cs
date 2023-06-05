@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
             UpdateGameState(GameState.IntensityMedium);
         }
     }
+
     IEnumerator HandleIntensityMedium()
     {
         AlarmSource.PlayOneShot(AlarmClip);
