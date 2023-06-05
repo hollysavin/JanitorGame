@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PlayerConfigManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     private int currentCount = 0;
     [SerializeField]

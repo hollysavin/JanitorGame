@@ -7,13 +7,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioSource MusicTrackSource;
-    public AudioSource AlarmSource;
-
-    public AudioClip MusicTrackClip1;
-    public AudioClip MusicTrackClip2;
-    public AudioClip MusicTrackClip3;
-    public AudioClip AlarmClip;
 
     public TextMeshProUGUI timerText;
 
@@ -72,7 +65,6 @@ public class GameManager : MonoBehaviour
     private void HandleGameEnd()
     {
         gameStarted = false;
-        MusicTrackSource.Stop();
         timerText.gameObject.SetActive(true);
         timerText.text = "You win!";
         StartCoroutine("ExitToMenu");
@@ -90,7 +82,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator HandleIntensityLow()
     {
-        MusicTrackSource.PlayOneShot(MusicTrackClip1);
         yield return new WaitForSeconds(INTENSITY_DURATION);
         if (currentPlayerCount != 1)
         {
@@ -100,9 +91,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator HandleIntensityMedium()
     {
-        AlarmSource.PlayOneShot(AlarmClip);
-        MusicTrackSource.Stop();
-        MusicTrackSource.PlayOneShot(MusicTrackClip2);
         yield return new WaitForSeconds(INTENSITY_DURATION);
         if (currentPlayerCount != 1)
         {
@@ -118,9 +106,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleIntensityHigh()
     {
-        AlarmSource.PlayOneShot(AlarmClip);
-        MusicTrackSource.Stop();
-        MusicTrackSource.PlayOneShot(MusicTrackClip3);
+        
     }
 
     private void CheckForWinner()
