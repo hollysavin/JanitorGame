@@ -19,26 +19,18 @@ public class PlayerController : MonoBehaviour
     private bool isAttacking = false;
 
     //audio
-
-    public AudioSource JumpAudio;
-    public AudioSource BoxHitAudio;
-    public AudioSource FallOffMapAudio;
-    public AudioSource SweepAudio;
-
+    public AudioSource playerAudioSource;
     public AudioClip[] JumpArray;
-    private int JumpClipIndex;
-
     public AudioClip[] BoxArray;
-    private int BoxClipIndex;
-
     public AudioClip[] SweepArray;
-    private int SweepClipIndex;
-
+    private int clipIndex;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -76,7 +68,6 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         playerMoveInput = new Vector3(context.ReadValue<Vector2>().x, 0.0f, context.ReadValue<Vector2>().y);
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -85,7 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpMultiplier);
             anim.SetBool("Jumping", true);
-            PlayRandomJump();
+            PlayRandomSound(JumpArray, 0.4f);
         }
     }
 
@@ -98,9 +89,7 @@ public class PlayerController : MonoBehaviour
         isAttacking = true;
         anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 1);
         anim.SetTrigger("Sweep");
-        PlayRandomSweep();
-
-
+        PlayRandomSound(SweepArray, 0.4f);
 
         yield return new WaitForSeconds(0.8f);
 
@@ -122,7 +111,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Item")
         {
-            PlayRandomBox();
+            PlayRandomSound(BoxArray, 1);
         }
     }
 
@@ -134,23 +123,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    void PlayRandomJump()
+    void PlayRandomSound(AudioClip[] soundArray, float volume)
     {
-        JumpClipIndex = Random.Range(0, JumpArray.Length);
-        JumpAudio.PlayOneShot(JumpArray[JumpClipIndex]);
+        clipIndex = Random.Range(0, soundArray.Length);
+        playerAudioSource.PlayOneShot(soundArray[clipIndex], volume);
     }
-
-    void PlayRandomBox()
-    {
-        BoxClipIndex = Random.Range(0, BoxArray.Length);
-        BoxHitAudio.PlayOneShot(BoxArray[BoxClipIndex]);
-    }
-
-    void PlayRandomSweep()
-    {
-        SweepClipIndex = Random.Range(0, SweepArray.Length);
-        SweepAudio.PlayOneShot(SweepArray[SweepClipIndex]);
-    }
-
 }
