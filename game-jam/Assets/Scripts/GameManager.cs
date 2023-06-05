@@ -7,15 +7,12 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
     public TextMeshProUGUI timerText;
 
-    public static GameManager _instance;
-
+    public static GameManager instance;
     public GameState state;
 
     const int COUNTDOWN = 6, INTENSITY_DURATION = 20;
-    private int currentPlayerCount = 0;
     private bool gameStarted = false;
 
     public object HandleGameover { get; private set; }
@@ -23,7 +20,14 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> OnGameStateChange;
     private void Awake()
     {
-        _instance = this;
+        if(instance == null )
+        instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -33,7 +37,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        currentPlayerCount = GameObject.FindGameObjectsWithTag("Player").Length;
         CheckForWinner();
     }
 
@@ -43,6 +46,8 @@ public class GameManager : MonoBehaviour
 
         switch (newState)
         {
+            case GameState.AddPlayer:
+                break;
             case GameState.CountDown:
                 StartCoroutine("HandleCountDown");
                 break;
@@ -53,64 +58,42 @@ public class GameManager : MonoBehaviour
                 StartCoroutine("HandleIntensityMedium");
                 break;
             case GameState.IntensityHigh:
-                HandleIntensityHigh();
                 break;
             case GameState.End:
-                HandleGameEnd();
+                StartCoroutine("HandleGameEnd");
                 break;
         }
         OnGameStateChange?.Invoke(newState);
     }
-
-    private void HandleGameEnd()
-    {
-        gameStarted = false;
-        timerText.gameObject.SetActive(true);
-        timerText.text = "You win!";
-        StartCoroutine("ExitToMenu");
-    }
-
     IEnumerator HandleCountDown()
     {
         yield return new WaitForSeconds(COUNTDOWN);
         gameStarted = true;
-        if (currentPlayerCount != 1)
-        {
-            UpdateGameState(GameState.IntensityLow);
-        }
+        UpdateGameState(GameState.IntensityLow);
     }
 
     IEnumerator HandleIntensityLow()
     {
         yield return new WaitForSeconds(INTENSITY_DURATION);
-        if (currentPlayerCount != 1)
-        {
-            UpdateGameState(GameState.IntensityMedium);
-        }
+        UpdateGameState(GameState.IntensityMedium);
     }
 
     IEnumerator HandleIntensityMedium()
     {
         yield return new WaitForSeconds(INTENSITY_DURATION);
-        if (currentPlayerCount != 1)
-        {
-            UpdateGameState(GameState.IntensityHigh);
-        }
+        UpdateGameState(GameState.IntensityHigh);
     }
-
-    IEnumerator ExitToMenu()
+    IEnumerator HandleGameEnd()
     {
+        gameStarted = false;
+        timerText.gameObject.SetActive(true);
+        timerText.text = "You win!";
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Start");
     }
-
-    private void HandleIntensityHigh()
-    {
-        
-    }
-
     private void CheckForWinner()
     {
+        int currentPlayerCount = GameObject.FindGameObjectsWithTag("Player").Length;
         if (currentPlayerCount == 1 && gameStarted)
         {
             UpdateGameState(GameState.End);
@@ -120,6 +103,7 @@ public class GameManager : MonoBehaviour
 
 public enum GameState
 {
+    AddPlayer,
     CountDown,
     IntensityLow,
     IntensityMedium,
