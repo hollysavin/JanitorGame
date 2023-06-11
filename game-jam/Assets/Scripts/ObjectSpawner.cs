@@ -52,9 +52,17 @@ public class ObjectSpawner : MonoBehaviour
         while (isRunning)
         {
             GameObject randomObj = prefabList[Random.Range(0, (prefabList.Count))];
+            float randomScale = RandomSize();
+            randomObj.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
             Instantiate(randomObj, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(spawnRate);
         }
+    }
+
+    private float RandomSize()
+    {
+        float minSize = 0.3f, maxSize = 0.8f, randSize = Random.Range(minSize, maxSize);
+        return randSize;
     }
 
 }
