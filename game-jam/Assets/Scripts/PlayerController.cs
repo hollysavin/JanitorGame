@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     public AudioSource playerAudioSource;
     public AudioClip[] JumpArray;
     public AudioClip[] BoxArray;
-    public AudioClip[] SweepArray;
     private int clipIndex;
 
     void Start()
@@ -78,23 +77,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Jumping", true);
             PlayRandomSound(JumpArray, 0.4f);
         }
-    }
-
-    public void OnSweep(InputAction.CallbackContext context)
-    {
-        if(!isAttacking) StartCoroutine(Sweep());
-    }
-    IEnumerator Sweep()
-    {
-        isAttacking = true;
-        anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 1);
-        anim.SetTrigger("Sweep");
-        PlayRandomSound(SweepArray, 0.4f);
-
-        yield return new WaitForSeconds(0.8f);
-
-        anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 0);
-        isAttacking = false;
     }
 
     private void OnCollisionStay(Collision collision)

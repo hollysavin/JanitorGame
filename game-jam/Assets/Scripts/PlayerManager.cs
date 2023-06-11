@@ -35,7 +35,6 @@ public class PlayerManager : MonoBehaviour
         Renderer[] renderers = newPlayer.GetComponentsInChildren<Renderer>();
         renderers[0].material = playerOutfits[currentCount];
         renderers[1].material = playerOutlines[currentCount];
-        renderers[3].material = playerOutlines[currentCount];
         newPlayer.GetComponentInChildren<Image>().color = arrowColors[currentCount];
         newPlayer.GetComponentInChildren<TextMeshProUGUI>().text = names[currentCount];
         newPlayer.GetComponentInChildren<Transform>().position = playerPositions[currentCount].position;

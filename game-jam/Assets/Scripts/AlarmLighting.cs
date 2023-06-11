@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightingDynamic : MonoBehaviour
+public class AlarmLighting : MonoBehaviour
 {
     public Light light1;
     public Light light2;
