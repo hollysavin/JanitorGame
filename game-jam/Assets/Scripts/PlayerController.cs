@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.Windows;
 
 public class PlayerController : MonoBehaviour
@@ -11,17 +12,21 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     Vector3 playerMoveInput = Vector3.zero;
-    [SerializeField] float movementMultiplier;
-    [SerializeField] float jumpMultiplier;
-    [SerializeField] float turnSpeed;
+    
+    [SerializeField] private float movementMultiplier;
+    [SerializeField] private float jumpMultiplier;
+    [SerializeField] private float turnSpeed;
+    [SerializeField] private Transform holdSpot;
 
     private bool isGrounded = false;
-    private bool isAttacking = false;
+    private bool isHolding = false;
+
 
     //audio
     public AudioSource playerAudioSource;
     public AudioClip[] JumpArray;
     public AudioClip[] BoxArray;
+    public AudioClip[] SweepArray;
     private int clipIndex;
 
     void Start()
@@ -64,6 +69,7 @@ public class PlayerController : MonoBehaviour
         rb.MoveRotation(targetRotation);
     }
 
+
     public void OnMove(InputAction.CallbackContext context)
     {
         playerMoveInput = new Vector3(context.ReadValue<Vector2>().x, 0.0f, context.ReadValue<Vector2>().y);
@@ -77,6 +83,42 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Jumping", true);
             PlayRandomSound(JumpArray, 0.4f);
         }
+    }
+
+    public void OnPickup(InputAction.CallbackContext context)
+    {
+        if (!isHolding) PickUpItem();
+    }
+
+    public void OnThrow(InputAction.CallbackContext context)
+    {
+        if (isHolding) ThrowItem();
+    }
+
+    private void PickUpItem()
+    {
+        int layerMask = LayerMask.GetMask("Objects");
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.6f, layerMask))
+        {
+            GameObject gameObject = hit.transform.gameObject;
+            Destroy(gameObject.GetComponent<Rigidbody>());
+            gameObject.transform.position = holdSpot.transform.position;
+            gameObject.transform.parent = holdSpot;
+            //anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 1);
+            //anim.SetTrigger("Sweep");
+            isHolding = true;
+        }
+    }
+
+    private void ThrowItem()
+    {
+        GameObject gameObject = holdSpot.GetChild(0).gameObject;
+        gameObject.gameObject.transform.parent = null;
+        gameObject.AddComponent<Rigidbody>();
+        gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 450);
+        isHolding = false;
     }
 
     private void OnCollisionStay(Collision collision)

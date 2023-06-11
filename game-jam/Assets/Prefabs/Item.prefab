@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8931832714630496939}
   - component: {fileID: 8931832714630496938}
   - component: {fileID: 4290179466418463018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Item
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8931832714630496933}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -202,6 +202,10 @@ PrefabInstance:
       value: CardboardBoxB_Destroyed
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d3728564753de8c42a7be58f69d7fe2a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d3728564753de8c42a7be58f69d7fe2a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -283,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardboardBoxB_Clean
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d203cdc36cf146b4093953548d0c8a8a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d203cdc36cf146b4093953548d0c8a8a, type: 3}
 --- !u!4 &6519736599009842609 stripped
@@ -360,6 +368,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4a31d2f7c9f6d8547acc72c0ed6c8bc2, type: 3}
       propertyPath: m_Name
       value: CardboardBoxB_Dirty
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a31d2f7c9f6d8547acc72c0ed6c8bc2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4a31d2f7c9f6d8547acc72c0ed6c8bc2, type: 3}
       propertyPath: m_IsActive

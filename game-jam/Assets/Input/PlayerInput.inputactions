@@ -24,9 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sweep",
+                    "name": "Pickup",
                     "type": "Button",
                     "id": "18dbfb26-f03b-442a-aa1b-56ed68f49848",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Throw",
+                    "type": "Button",
+                    "id": "07ed4ae2-2704-4c3b-ae94-bc4b7225a4ab",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -146,56 +155,45 @@
                 },
                 {
                     "name": "",
-                    "id": "3d57014e-4ca5-40e6-b1a8-cadd99a849a1",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Sweep",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9fa9f803-7786-4a46-9ddf-a64c6887be34",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Sweep",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "68f3e865-2f43-44c4-a51d-6a022e5663e3",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Sweep",
+                    "action": "Pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "160b006e-5ee5-4f5e-b5f2-0a4e7abd005e",
-                    "path": "<DualShockGamepad>/leftShoulder",
+                    "id": "a0ff4220-7212-45d1-8986-e62864069342",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Sweep",
+                    "action": "Pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "59bea34f-3f25-471f-a216-cef7f4a1cb94",
-                    "path": "<DualShockGamepad>/rightShoulder",
+                    "id": "5f6b863e-fc52-4e10-beec-6ea1fc5d649a",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Sweep",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e74ef4ad-9352-47e6-82f8-4c820325d4b1",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

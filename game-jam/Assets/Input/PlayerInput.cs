@@ -46,9 +46,18 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Sweep"",
+                    ""name"": ""Pickup"",
                     ""type"": ""Button"",
                     ""id"": ""18dbfb26-f03b-442a-aa1b-56ed68f49848"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""07ed4ae2-2704-4c3b-ae94-bc4b7225a4ab"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -168,56 +177,45 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3d57014e-4ca5-40e6-b1a8-cadd99a849a1"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Sweep"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9fa9f803-7786-4a46-9ddf-a64c6887be34"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Sweep"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""68f3e865-2f43-44c4-a51d-6a022e5663e3"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Sweep"",
+                    ""action"": ""Pickup"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""160b006e-5ee5-4f5e-b5f2-0a4e7abd005e"",
-                    ""path"": ""<DualShockGamepad>/leftShoulder"",
+                    ""id"": ""a0ff4220-7212-45d1-8986-e62864069342"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Sweep"",
+                    ""action"": ""Pickup"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""59bea34f-3f25-471f-a216-cef7f4a1cb94"",
-                    ""path"": ""<DualShockGamepad>/rightShoulder"",
+                    ""id"": ""5f6b863e-fc52-4e10-beec-6ea1fc5d649a"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Sweep"",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e74ef4ad-9352-47e6-82f8-4c820325d4b1"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -230,7 +228,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
-        m_Gameplay_Sweep = m_Gameplay.FindAction("Sweep", throwIfNotFound: true);
+        m_Gameplay_Pickup = m_Gameplay.FindAction("Pickup", throwIfNotFound: true);
+        m_Gameplay_Throw = m_Gameplay.FindAction("Throw", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -292,14 +291,16 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Movement;
     private readonly InputAction m_Gameplay_Jump;
-    private readonly InputAction m_Gameplay_Sweep;
+    private readonly InputAction m_Gameplay_Pickup;
+    private readonly InputAction m_Gameplay_Throw;
     public struct GameplayActions
     {
         private @PlayerInput m_Wrapper;
         public GameplayActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
-        public InputAction @Sweep => m_Wrapper.m_Gameplay_Sweep;
+        public InputAction @Pickup => m_Wrapper.m_Gameplay_Pickup;
+        public InputAction @Throw => m_Wrapper.m_Gameplay_Throw;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -315,9 +316,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Sweep.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSweep;
-                @Sweep.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSweep;
-                @Sweep.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSweep;
+                @Pickup.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPickup;
+                @Pickup.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPickup;
+                @Pickup.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPickup;
+                @Throw.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrow;
+                @Throw.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrow;
+                @Throw.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrow;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -328,9 +332,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Sweep.started += instance.OnSweep;
-                @Sweep.performed += instance.OnSweep;
-                @Sweep.canceled += instance.OnSweep;
+                @Pickup.started += instance.OnPickup;
+                @Pickup.performed += instance.OnPickup;
+                @Pickup.canceled += instance.OnPickup;
+                @Throw.started += instance.OnThrow;
+                @Throw.performed += instance.OnThrow;
+                @Throw.canceled += instance.OnThrow;
             }
         }
     }
@@ -339,6 +346,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnSweep(InputAction.CallbackContext context);
+        void OnPickup(InputAction.CallbackContext context);
+        void OnThrow(InputAction.CallbackContext context);
     }
 }

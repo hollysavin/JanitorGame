@@ -30,11 +30,12 @@ Transform:
   m_GameObject: {fileID: 599403894345416027}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.35, y: 4.27, z: -13.3}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1142572727509419760}
   - {fileID: 599403896338756698}
+  - {fileID: 7064898979105994961}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -83,6 +84,7 @@ MonoBehaviour:
   movementMultiplier: 2
   jumpMultiplier: 10
   turnSpeed: 720
+  holdSpot: {fileID: 7064898979105994961}
   playerAudioSource: {fileID: 0}
   JumpArray:
   - {fileID: 8300000, guid: 2b99b781d25226d40b3c2cdc4c390917, type: 3}
@@ -160,7 +162,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 599403894345416026}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnSweep
+        m_MethodName: OnPickup
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -172,6 +174,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 18dbfb26-f03b-442a-aa1b-56ed68f49848
     m_ActionName: Gameplay/Sweep[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 599403894345416026}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 07ed4ae2-2704-4c3b-ae94-bc4b7225a4ab
+    m_ActionName: Gameplay/Throw[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -599,6 +617,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671a6f3c64a06c84ba1c9641b2f57876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3503342308899377820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7064898979105994961}
+  m_Layer: 0
+  m_Name: HoldObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7064898979105994961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503342308899377820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11, y: 1.56, z: 2.33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 599403894345416021}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &599403896091369755
 PrefabInstance:
   m_ObjectHideFlags: 0

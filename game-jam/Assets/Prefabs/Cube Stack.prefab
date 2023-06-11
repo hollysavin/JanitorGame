@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6927397416160529431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube Stack
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -41,9 +41,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6927397416160529431}
     m_Modifications:
+    - target: {fileID: 5136345626332004202, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850476393336934155, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033742760792106294, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8931832714630496933, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
       propertyPath: m_Name
       value: Item (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931832714630496933, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8931832714630496942, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
       propertyPath: m_RootOrder
@@ -103,9 +119,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6927397416160529431}
     m_Modifications:
+    - target: {fileID: 5136345626332004202, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850476393336934155, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033742760792106294, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8931832714630496933, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
       propertyPath: m_Name
       value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931832714630496933, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8931832714630496942, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
       propertyPath: m_RootOrder
@@ -165,9 +197,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6927397416160529431}
     m_Modifications:
+    - target: {fileID: 5136345626332004202, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850476393336934155, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033742760792106294, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8931832714630496933, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
       propertyPath: m_Name
       value: Item (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931832714630496933, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8931832714630496942, guid: abfbf4bf9747b5a44aad169420a21c46, type: 3}
       propertyPath: m_RootOrder
