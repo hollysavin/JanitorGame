@@ -102,13 +102,16 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.6f, layerMask))
         {
-            GameObject gameObject = hit.transform.gameObject;
-            Destroy(gameObject.GetComponent<Rigidbody>());
-            gameObject.transform.position = holdSpot.transform.position;
-            gameObject.transform.parent = holdSpot;
-            //anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 1);
-            //anim.SetTrigger("Sweep");
-            isHolding = true;
+            if (gameObject.transform.parent == null)
+            {
+                GameObject gameObject = hit.transform.gameObject;
+                Destroy(gameObject.GetComponent<Rigidbody>());
+                gameObject.transform.position = holdSpot.transform.position;
+                gameObject.transform.parent = holdSpot;
+                //anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 1);
+                //anim.SetTrigger("Sweep");
+                isHolding = true;
+            }
         }
     }
 
