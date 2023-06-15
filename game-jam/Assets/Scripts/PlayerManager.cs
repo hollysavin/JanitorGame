@@ -38,6 +38,13 @@ public class PlayerManager : MonoBehaviour
         newPlayer.GetComponentInChildren<Image>().color = arrowColors[currentCount];
         newPlayer.GetComponentInChildren<TextMeshProUGUI>().text = names[currentCount];
         newPlayer.GetComponentInChildren<Transform>().position = playerPositions[currentCount].position;
+
+        PlayerController playerCon = newPlayer.GetComponentInChildren<PlayerController>();
+        if (playerCon != null)
+        {
+            playerCon.SetPlayerName(names[currentCount]);
+        }
+
         currentCount++;
     }
 

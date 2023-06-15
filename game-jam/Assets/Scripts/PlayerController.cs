@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] BoxArray;
     public AudioClip[] SweepArray;
     private int clipIndex;
+    private string playerName = null;
 
     void Start()
     {
@@ -97,19 +98,22 @@ public class PlayerController : MonoBehaviour
 
     private void PickUpItem()
     {
-        int layerMask = LayerMask.GetMask("Objects");
+        int layerMask = LayerMask.GetMask("Items");
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 0.6f, layerMask))
         {
             if (gameObject.transform.parent == null)
             {
-                GameObject gameObject = hit.transform.gameObject;
-                Destroy(gameObject.GetComponent<Rigidbody>());
-                gameObject.transform.position = holdSpot.transform.position;
-                gameObject.transform.parent = holdSpot;
-                //anim.SetLayerWeight(anim.GetLayerIndex("Sweep Layer"), 1);
-                //anim.SetTrigger("Sweep");
+                GameObject currentItem = hit.transform.gameObject;
+                Destroy(currentItem.GetComponent<Rigidbody>());
+                currentItem.transform.position = holdSpot.transform.position;
+                currentItem.transform.parent = holdSpot;
+                Item itemScript = currentItem.GetComponent<Item>();
+                if (itemScript != null)
+                {
+                    itemScript.SetItemOwner(playerName);
+                }
                 isHolding = true;
             }
         }
@@ -153,5 +157,10 @@ public class PlayerController : MonoBehaviour
     {
         clipIndex = Random.Range(0, soundArray.Length);
         playerAudioSource.PlayOneShot(soundArray[clipIndex], volume);
+    }
+
+    public void SetPlayerName(string newName)
+    {
+        playerName = newName;
     }
 }
