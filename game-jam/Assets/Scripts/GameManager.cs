@@ -99,6 +99,11 @@ public class GameManager : MonoBehaviour
             UpdateGameState(GameState.End);
         }
     }
+
+    public void PlayerScored(string playerName)
+    {
+        Debug.Log(playerName + " HAS SCORED");
+    }
 }
 
 public enum GameState

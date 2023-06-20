@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
     private AudioClip MusicTrackClip3;
     [SerializeField]
     private AudioClip AlarmClip;
+    [SerializeField]
+    private AudioClip CountdownAudio;
 
     private void Awake()
     {
@@ -33,6 +35,9 @@ public class AudioManager : MonoBehaviour
     {
         switch (state)
         {
+            case GameState.CountDown:
+                AlarmSource.PlayOneShot(CountdownAudio);
+                break;
             case GameState.IntensityLow:
                 MusicTrackSource.PlayOneShot(MusicTrackClip1);
                 break;

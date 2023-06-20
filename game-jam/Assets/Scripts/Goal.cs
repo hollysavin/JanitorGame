@@ -5,7 +5,6 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     private string playerName;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Item")
@@ -13,7 +12,7 @@ public class Goal : MonoBehaviour
             Item itemScript = other.gameObject.GetComponent<Item>();
             if (itemScript != null)
             {
-                if(itemScript.HasOwner()) Debug.Log("GOAL " + itemScript.GetItemOwner());
+                if(itemScript.HasOwner()) GameManager.instance.PlayerScored(itemScript.GetItemOwner());
             }
             
         }
