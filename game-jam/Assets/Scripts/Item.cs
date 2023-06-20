@@ -17,4 +17,9 @@ public class Item : MonoBehaviour
         itemOwner = newOwner;
     }
 
+    public bool HasOwner()
+    {
+        return (itemOwner != null);
+    }
+
 }

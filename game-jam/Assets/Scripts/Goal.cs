@@ -13,7 +13,7 @@ public class Goal : MonoBehaviour
             Item itemScript = other.gameObject.GetComponent<Item>();
             if (itemScript != null)
             {
-                Debug.Log("GOAL " + itemScript.GetItemOwner());
+                if(itemScript.HasOwner()) Debug.Log("GOAL " + itemScript.GetItemOwner());
             }
             
         }
