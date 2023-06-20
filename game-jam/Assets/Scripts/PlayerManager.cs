@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
+    private PlayerInputManager inputManager;
+
     private int currentCount = 0;
     [SerializeField]
     private Material[] playerOutfits, playerOutlines;
@@ -19,14 +21,15 @@ public class PlayerManager : MonoBehaviour
     private String[] names;
 
 
-    private void OnEnable()
+    private void Awake()
     {
-        PlayerInputManager.instance.onPlayerJoined += AddPlayer;
+        inputManager = PlayerInputManager.instance;
+        inputManager.onPlayerJoined += AddPlayer;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        PlayerInputManager.instance.onPlayerJoined -= AddPlayer;
+        inputManager.onPlayerJoined -= AddPlayer;
     }
 
 
